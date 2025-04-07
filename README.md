@@ -35,7 +35,6 @@ Aplicação em C# que consome uma API pública de partidas de futebol e retorna 
 - Requisições HTTP com filtro por `team` e `year`;
 - Manipulação de JSON;
 - Soma dos gols marcados como mandante ou visitante;
-- 
 ---
 
 ## 3. 🔧 Comandos Git
@@ -51,19 +50,13 @@ Se referir ao Doc para respostas
 ## 4. 📊 Consulta SQL com Agrupamento
 
 Consulta SQL aplicada sobre uma tabela fictícia de registros de atendimento. O objetivo é retornar o **assunto**, **ano** e a **quantidade de ocorrências**, desde que tenham mais de 3 ocorrências no mesmo ano.
-Se referir ao Doc para respostas
 
 ```sql
-SELECT 
-  assunto, 
-  ano, 
-  COUNT(*) AS total_ocorrencias
-FROM 
-  atendimentos
-GROUP BY 
-  assunto, ano
-HAVING 
-  COUNT(*) > 3;
+SELECT assunto, ano, COUNT(*) AS quantidade_ocorrencias 
+FROM atendimentos
+GROUP BY assunto, ano
+HAVING COUNT(*) > 3 
+ORDER BY ano ASC, quantidade_ocorrencias DESC;
 ```
 
 ---
@@ -82,7 +75,7 @@ API RESTful desenvolvida em **ASP.NET Core** com funcionalidades de movimentaç�
 ### Arquitetura Aplicada:
 - **DDD (Domain-Driven Design)**: separação clara de responsabilidades;
 - **CQRS**: separação entre comandos (escrita) e queries (leitura);
-- **Injeção de Dependência**`;
+- **Injeção de Dependência**;
 - **Documentação com Swagger**;
 - Camadas: `Domain`, `Application`, `Infrastructure`, `Presentation`.
 
@@ -104,7 +97,6 @@ API RESTful desenvolvida em **ASP.NET Core** com funcionalidades de movimentaç�
 
 - ✅ SQL seguro com parâmetros via Dapper;
 - 🔁 Proteção contra duplicidade com idempotência;
-- 📦 Estrutura modular e extensível;
 - 🧪 Código validado com testes manuais em diferentes cenários;
 - 📚 Código documentado via Swagger.
 
