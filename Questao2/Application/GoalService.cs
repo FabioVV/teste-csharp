@@ -1,4 +1,3 @@
-using Newtonsoft.Json;
 using Questao2.Domain.Interface;
 
 public class GoalService : IGoalService

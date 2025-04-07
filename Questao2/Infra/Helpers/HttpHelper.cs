@@ -1,11 +1,5 @@
 ﻿using Newtonsoft.Json;
 using Questao2.Domain.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Questao2.Infra.Helpers
 {

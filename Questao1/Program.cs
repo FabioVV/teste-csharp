@@ -1,12 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Questao1.Domain.Interfaces;
 using Questao1.Presentation;
-using System;
-using System.Globalization;
 
 namespace Questao1 {
     class Program {
-        static void Main(string[] args) {
+        static void Main() {
 
             ServiceCollection services = new ServiceCollection();
             services.AddTransient<IAccountService, AccountService>();

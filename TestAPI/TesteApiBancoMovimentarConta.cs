@@ -1,6 +1,5 @@
 using FluentAssertions;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using Questao5.Application.Commands.Responses;

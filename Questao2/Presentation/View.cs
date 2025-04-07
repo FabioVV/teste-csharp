@@ -1,6 +1,5 @@
 ﻿using Questao2.Domain.Interface;
 
-
 namespace Questao2.Presentation
 {
     class View : IView

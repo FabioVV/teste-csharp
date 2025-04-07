@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using Questao5.Application.Commands.Requests;
 using Questao5.Application.Commands.Responses;
-using Questao5.Application.Queries.Requests;
 using Questao5.Application.Queries.Responses;
 using Questao5.Domain.Enumerators;
 using Questao5.Infrastructure.Services.Controllers;
