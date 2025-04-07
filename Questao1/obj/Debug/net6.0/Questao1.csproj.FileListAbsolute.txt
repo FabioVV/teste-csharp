@@ -18,3 +18,23 @@ C:\Users\fabin\OneDrive\Área de Trabalho\testepg\Questao1\obj\Debug\net6.0\ref\
 C:\Users\fabin\OneDrive\Área de Trabalho\testepg\Questao1\obj\Debug\net6.0\Questao1.sourcelink.json
 C:\Users\fabin\OneDrive\Área de Trabalho\testepg\Questao1\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\fabin\OneDrive\Área de Trabalho\testepg\Questao1\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\bin\Debug\net6.0\Questao1.exe
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\bin\Debug\net6.0\Questao1.deps.json
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\bin\Debug\net6.0\Questao1.runtimeconfig.json
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\bin\Debug\net6.0\Questao1.dll
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\bin\Debug\net6.0\Questao1.pdb
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\obj\Debug\net6.0\Questao1.csproj.AssemblyReference.cache
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\obj\Debug\net6.0\Questao1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\obj\Debug\net6.0\Questao1.AssemblyInfoInputs.cache
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\obj\Debug\net6.0\Questao1.AssemblyInfo.cs
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\obj\Debug\net6.0\Questao1.csproj.CoreCompileInputs.cache
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\obj\Debug\net6.0\Questao1.sourcelink.json
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\obj\Debug\net6.0\Questao1.csproj.Up2Date
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\obj\Debug\net6.0\Questao1.dll
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\obj\Debug\net6.0\refint\Questao1.dll
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\obj\Debug\net6.0\Questao1.pdb
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\obj\Debug\net6.0\Questao1.genruntimeconfig.cache
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao1\obj\Debug\net6.0\ref\Questao1.dll

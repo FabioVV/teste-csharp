@@ -28,7 +28,7 @@ namespace Questao2.Presentation
                 Console.WriteLine("Team " + teamName + " scored " + totalGoals.ToString() + " goals in " + year);
 
                 Console.Write("Digite outro time: ");
-                string AnotherteamName = Console.ReadLine();
+                string AnotherteamName = Console.ReadLine() ?? "Time não reconhecido";
 
                 Console.Write("Digite um ano: ");
                 bool parseNum = int.TryParse(Console.ReadLine(), out int AnotherYear);
@@ -47,6 +47,7 @@ namespace Questao2.Presentation
             }
             finally
             {
+                Console.WriteLine("Clique alguma tecla para finalizar o programa...");
                 Console.ReadKey();
                 Environment.Exit(1);
             }
