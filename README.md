@@ -17,13 +17,13 @@ Este repositório reúne a solução para os cinco desafios propostos no **Teste
 
 ## 1. 📘 Cadastro de Conta Bancária (Console)
 
-Aplicação de console em C# que realiza o cadastro de uma conta corrente. O número da conta é imutável após o cadastro, mas o nome do titular pode ser alterado posteriormente. O depósito inicial é opcional.
+Aplicação de console em C# que realiza o cadastro de uma conta corrente. O número da conta e Titular é imutável após o cadastro. O depósito inicial é opcional.
 
 ### Funcionalidades:
 - Cadastro de conta com ou sem depósito inicial;
 - Visualização de dados da conta;
 - Validações simples de entrada;
-- Alteração do nome do titular.
+- Operações simples de saque e depósito
 
 ---
 
@@ -35,24 +35,23 @@ Aplicação em C# que consome uma API pública de partidas de futebol e retorna 
 - Requisições HTTP com filtro por `team` e `year`;
 - Manipulação de JSON;
 - Soma dos gols marcados como mandante ou visitante;
-- Robustez contra falhas de conexão e dados incompletos.
-
+- 
 ---
 
 ## 3. 🔧 Comandos Git
 
-Neste desafio, são demonstrados os comandos Git utilizados no terminal Linux com editor de texto `nano`, conforme solicitado.
+Neste desafio, preciamos descobrir quais arquivos sobraram após rodarmos vários comands do Git.
+Se referir ao Doc para respostas
 
 ### Comandos utilizados:
-- `git init`, `git add`, `git commit`, `git branch`, `git merge`, `git rebase`, `git stash`, `git log`, `git push`, `git pull`;
-- Criação de branches e resolução de conflitos;
-- Explicação dos comandos e contexto de uso.
+- `git init`, `git add`, `git commit`, `git branch`, `git rm`;
 
 ---
 
 ## 4. 📊 Consulta SQL com Agrupamento
 
 Consulta SQL aplicada sobre uma tabela fictícia de registros de atendimento. O objetivo é retornar o **assunto**, **ano** e a **quantidade de ocorrências**, desde que tenham mais de 3 ocorrências no mesmo ano.
+Se referir ao Doc para respostas
 
 ```sql
 SELECT 
@@ -76,25 +75,25 @@ API RESTful desenvolvida em **ASP.NET Core** com funcionalidades de movimentaç�
 ### Funcionalidades:
 - Consulta de saldo;
 - Realização de movimentações com validações de saldo;
-- Implementação de **CQRS** com `MediatR`;
+- Implementação de **CQRS** e **Mediator** com `MediatR`;
 - Segurança contra **SQL Injection** usando `Dapper` com parâmetros;
 - Implementação de **idempotência** em operações críticas.
 
 ### Arquitetura Aplicada:
 - **DDD (Domain-Driven Design)**: separação clara de responsabilidades;
 - **CQRS**: separação entre comandos (escrita) e queries (leitura);
-- **Injeção de Dependência** com `IServiceCollection`;
+- **Injeção de Dependência**`;
 - **Documentação com Swagger**;
-- Camadas: `Domain`, `Application`, `Infrastructure`, `API`.
+- Camadas: `Domain`, `Application`, `Infrastructure`, `Presentation`.
 
 ---
 
 ## ⚙️ Tecnologias Utilizadas
 
-- C# 10 / .NET 6+
+- C# / .NET 8+
 - ASP.NET Core Web API
 - Dapper
-- Swagger (Swashbuckle)
+- Swagger
 - MediatR
 - SQLite
 - Git
@@ -107,7 +106,7 @@ API RESTful desenvolvida em **ASP.NET Core** com funcionalidades de movimentaç�
 - 🔁 Proteção contra duplicidade com idempotência;
 - 📦 Estrutura modular e extensível;
 - 🧪 Código validado com testes manuais em diferentes cenários;
-- 📚 Código documentado e com exemplos de uso via Swagger.
+- 📚 Código documentado via Swagger.
 
 ---
 
@@ -118,23 +117,21 @@ API RESTful desenvolvida em **ASP.NET Core** com funcionalidades de movimentaç�
 git clone https://github.com/seuusuario/teste-nivelamento-csharp.git
 cd teste-nivelamento-csharp
 
-# Executar o console app (Questão 1)
-dotnet run --project CadastroConta.Console
+# Entrar na pasta da questão desejada Ex: cd Questao1
+cd Questao1
 
-# Executar a API de consulta de gols (Questão 2)
-dotnet run --project GolsApi.Client
+# Executar o projeto dotnet da questão
+dotnet run
 
-# Executar a API RESTful (Questão 5)
-dotnet run --project ContaCorrente.API
 ```
 
 Acesse a documentação da API em:  
-🔗 `http://localhost:5000/swagger`
+🔗 `http://localhost:7140/swagger`
 
 ---
 
 ## ✍️ Autor
 
-Desenvolvido por **[Seu Nome Aqui]** – teste de nivelamento em C#.
+Desenvolvido por **Fábio Varela** – teste de nivelamento em C#.
 
 ---
