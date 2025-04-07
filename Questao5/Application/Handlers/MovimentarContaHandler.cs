@@ -41,7 +41,7 @@ namespace Questao5.Application.Handlers
                     break;
 
                 default:
-                    return Task.FromResult(new MovimentarContaResponse { erro = new Errors { Message = "Apenas os tipos “débito” ou “crédito” são aceitos", TipoError = TipoError.INVALID_TYPE.ToString() } });
+                    return Task.FromResult(new MovimentarContaResponse { erro = new Errors { Message = "Apenas os tipos “débito” (D) ou “crédito” (C) são aceitos", TipoError = TipoError.INVALID_TYPE.ToString() } });
             }
 
             if(request.Valor < 0)

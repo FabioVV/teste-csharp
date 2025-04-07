@@ -25,6 +25,11 @@ namespace Questao5.Application.Handlers
                 return Task.FromResult(new ProcurarContaPorIdResponse { erro = new Errors { Message = "Apenas contas correntes cadastradas podem receber movimentação", TipoError = TipoError.INVALID_ACCOUNT.ToString() } });
             }
 
+            if (result.Ativo != 1)
+            {
+                return Task.FromResult(new ProcurarContaPorIdResponse { erro = new Errors { Message = "Apenas contas correntes ativas podem receber movimentação", TipoError = TipoError.INACTIVE_ACCOUNT.ToString() } });
+            }
+
             return Task.FromResult(new ProcurarContaPorIdResponse { Idcontacorrente = result.IdContaCorrente, Saldo = result.Saldo, HoralConsulta = DateTime.Now, Titular = result.Nome });
         }
 

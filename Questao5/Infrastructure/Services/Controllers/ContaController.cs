@@ -11,6 +11,13 @@ namespace Questao5.Infrastructure.Services.Controllers
     [Route("api/v1/conta")]
     public class ContaController : ControllerBase
     {
+        private readonly IMediator _mediator;
+
+        public ContaController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
         [SwaggerOperation(
         Summary = "Movimenta uma conta",
         Description = "Este endpoint proporciona a ação de movimentar a conta através de débito ou crédito. A identificação de conta do usuário precisa ser na URL da request."
@@ -58,12 +65,7 @@ namespace Questao5.Infrastructure.Services.Controllers
                 return BadRequest(response.Result.erro);
             }
             
-            return Ok(new { // Para náo retornar o objeto de erro dentro
-                idcontacorrente = response.Result.Idcontacorrente,
-                Saldo = response.Result.Saldo,
-                Titular = response.Result.Titular,
-                horaConsulta = response.Result.HoralConsulta,
-            });
+            return Ok(response.Result);
         }
     }
 }
