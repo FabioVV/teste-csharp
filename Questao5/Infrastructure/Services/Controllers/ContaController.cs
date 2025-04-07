@@ -20,10 +20,12 @@ namespace Questao5.Infrastructure.Services.Controllers
 
         [SwaggerOperation(
         Summary = "Movimenta uma conta",
-        Description = "Este endpoint proporciona a ação de movimentar a conta através de débito ou crédito. A identificação de conta do usuário precisa ser na URL da request."
+        Description = "Este endpoint proporciona a ação de movimentar a conta através de débito ou crédito. A identificação de conta do usuário precisa ser na URL da request." +
+            "Headers esperados: \n" +
+            "IdempotencyKey: Identificador único da requisição"
         )]
         [SwaggerResponse(StatusCodes.Status200OK, "Movimentou a conta com sucesso.")]
-        [SwaggerResponse(StatusCodes.Status400BadRequest, "Erro de validação dos dados do body da request ou ID na URL.")]
+        [SwaggerResponse(StatusCodes.Status400BadRequest, "Erro: INVALID_ACCOUNT(idcontacorrente) - ID de conta inexistente; \n Erro: INACTIVE_ACCOUNT(idcontacorrente) - ID de conta inativa; \n Erro: INVALID_VALUE(Valor) - Valor de movimentação precisa ser positivo; \n Erro: INVALID_TYPE(TipoMovimento) - Apenas tipos de Débito (D) ou Crédito (C) são aceitos")]
         [HttpPost]
         [Route("movimentar/{id}")]
         [Idempotent(Enabled = false)] // Para ativar a idempotencia nesta rota, passar true aqui
@@ -34,10 +36,9 @@ namespace Questao5.Infrastructure.Services.Controllers
             [FromBody] MovimentarContaRequest command,
             [FromRoute] string id)
         {
-
             command.IdContaCorrente = id;
             var response = mediator.Send(command);
-
+            
             if (response.Result.erro != null)
             {
                 return BadRequest(response.Result.erro);

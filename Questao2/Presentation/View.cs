@@ -49,7 +49,6 @@ namespace Questao2.Presentation
             {
                 Console.WriteLine("Clique alguma tecla para finalizar o programa...");
                 Console.ReadKey();
-                Environment.Exit(1);
             }
         }
 

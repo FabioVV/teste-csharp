@@ -6,9 +6,9 @@ namespace Questao1
 
         private const double Tax = 3.50;
 
-        public int Number { get; set; }
+        private int Number { get; set; }
         public string Owner { get; set; }
-        public double Balance  { get; private set; }
+        private double Balance  { get; set; }
 
 
         public Account(int number = 0, string owner = "", double initialDeposit = 0)
