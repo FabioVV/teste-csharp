@@ -1,0 +1,78 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "My API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/v1/conta/movimentar": {
+      "post": {
+        "tags": [
+          "Conta"
+        ],
+        "summary": "Creates a new user",
+        "description": "This endpoint allows you to create a new user in the system. The user details should be provided in the request body.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovimentarContaRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully created the user."
+          },
+          "400": {
+            "description": "Invalid input provided."
+          }
+        }
+      }
+    },
+    "/api/v1/conta/consultar/{id}": {
+      "get": {
+        "tags": [
+          "Conta"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MovimentarContaRequest": {
+        "type": "object",
+        "properties": {
+          "IdContaCorrente": {
+            "type": "string",
+            "nullable": true
+          },
+          "Valor": {
+            "type": "number",
+            "format": "double"
+          },
+          "TipoMovimento": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

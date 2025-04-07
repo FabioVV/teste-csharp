@@ -1,0 +1,45 @@
+[
+  {
+    "ContainingType": "Questao5.Infrastructure.Services.Controllers.ContaController",
+    "Method": "ConsultarConta",
+    "RelativePath": "api/v1/conta/consultar/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Questao5.Infrastructure.Services.Controllers.ContaController",
+    "Method": "MovimentarConta",
+    "RelativePath": "api/v1/conta/movimentar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Questao5.Application.Queries.Requests.MovimentarContaRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      }
+    ]
+  }
+]
