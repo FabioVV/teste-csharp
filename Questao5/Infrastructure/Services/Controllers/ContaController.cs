@@ -13,19 +13,22 @@ namespace Questao5.Infrastructure.Services.Controllers
     {
         [SwaggerOperation(
         Summary = "Movimenta uma conta",
-        Description = "Este endpoint proporciona a ação de movimentar a conta através de débito ou crédito. A identificação de conta do usuário precisa ser passada no body da request."
+        Description = "Este endpoint proporciona a ação de movimentar a conta através de débito ou crédito. A identificação de conta do usuário precisa ser na URL da request."
         )]
         [SwaggerResponse(StatusCodes.Status200OK, "Movimentou a conta com sucesso.")]
-        [SwaggerResponse(StatusCodes.Status400BadRequest, "Erro de validação dos dados do body da request.")]
+        [SwaggerResponse(StatusCodes.Status400BadRequest, "Erro de validação dos dados do body da request ou ID na URL.")]
         [HttpPost]
-        [Route("movimentar")]
+        [Route("movimentar/{id}")]
         [Idempotent(Enabled = false)]
         [Consumes("application/json")]
         [Produces("application/json")]
         public IActionResult MovimentarConta(
             [FromServices] IMediator mediator,
-            [FromBody] MovimentarContaRequest command)
+            [FromBody] MovimentarContaRequest command,
+            [FromRoute] string id)
         {
+
+            command.IdContaCorrente = id;
             var response = mediator.Send(command);
 
             if (response.Result.erro != null)
