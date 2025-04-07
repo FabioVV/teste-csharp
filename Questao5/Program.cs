@@ -1,7 +1,6 @@
 using IdempotentAPI.AccessCache;
 using IdempotentAPI.Cache.DistributedCache.Extensions.DependencyInjection;
 using IdempotentAPI.Core;
-using IdempotentAPI.Extensions.DependencyInjection;
 using MediatR;
 using Microsoft.OpenApi.Models;
 using Questao5.Domain.Interfaces;
@@ -18,6 +17,8 @@ builder.Services.AddControllers();
 
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
+
+// Adiciona idempotencia através de CACHE do client
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddIdempotentAPIUsingDistributedCache();
 

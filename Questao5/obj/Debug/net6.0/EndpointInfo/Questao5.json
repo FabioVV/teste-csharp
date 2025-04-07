@@ -1,17 +1,27 @@
 {
   "openapi": "3.0.4",
   "info": {
-    "title": "My API",
+    "title": "API Banco",
     "version": "v1"
   },
   "paths": {
-    "/api/v1/conta/movimentar": {
+    "/api/v1/conta/movimentar/{id}": {
       "post": {
         "tags": [
           "Conta"
         ],
-        "summary": "Creates a new user",
-        "description": "This endpoint allows you to create a new user in the system. The user details should be provided in the request body.",
+        "summary": "Movimenta uma conta",
+        "description": "Este endpoint proporciona a ação de movimentar a conta através de débito ou crédito. A identificação de conta do usuário precisa ser na URL da request.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -23,10 +33,10 @@
         },
         "responses": {
           "200": {
-            "description": "Successfully created the user."
+            "description": "Movimentou a conta com sucesso."
           },
           "400": {
-            "description": "Invalid input provided."
+            "description": "Erro de validação dos dados do body da request ou ID na URL."
           }
         }
       }
@@ -36,6 +46,8 @@
         "tags": [
           "Conta"
         ],
+        "summary": "Procura uma conta por id",
+        "description": "Este endpoint proporciona a ação de procurar por uma conta no banco através do seu id. A identificação de conta do usuário precisa ser passada na URL da requisição.",
         "parameters": [
           {
             "name": "id",
@@ -48,7 +60,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Conta encontrada com sucesso."
+          },
+          "400": {
+            "description": "Erro na válidação do ID da conta. (Inválido, inativa)"
           }
         }
       }

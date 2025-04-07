@@ -13,12 +13,23 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      }
+    ]
   },
   {
     "ContainingType": "Questao5.Infrastructure.Services.Controllers.ContaController",
     "Method": "MovimentarConta",
-    "RelativePath": "api/v1/conta/movimentar",
+    "RelativePath": "api/v1/conta/movimentar/{id}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -26,6 +37,11 @@
       {
         "Name": "command",
         "Type": "Questao5.Application.Queries.Requests.MovimentarContaRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],

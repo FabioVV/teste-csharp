@@ -489,3 +489,4 @@ C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao5\obj\Debug\net6.0\r
 C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao5\obj\Debug\net6.0\Questao5.pdb
 C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao5\obj\Debug\net6.0\Questao5.genruntimeconfig.cache
 C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao5\obj\Debug\net6.0\ref\Questao5.dll
+C:\Users\fabin\OneDrive\Área de Trabalho\teste real\Questao5\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt

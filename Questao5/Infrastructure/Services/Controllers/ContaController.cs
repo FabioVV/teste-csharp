@@ -19,7 +19,7 @@ namespace Questao5.Infrastructure.Services.Controllers
         [SwaggerResponse(StatusCodes.Status400BadRequest, "Erro de validação dos dados do body da request ou ID na URL.")]
         [HttpPost]
         [Route("movimentar/{id}")]
-        [Idempotent(Enabled = false)]
+        [Idempotent(Enabled = false)] // Para ativar a idempotencia nesta rota, passar true aqui
         [Consumes("application/json")]
         [Produces("application/json")]
         public IActionResult MovimentarConta(
