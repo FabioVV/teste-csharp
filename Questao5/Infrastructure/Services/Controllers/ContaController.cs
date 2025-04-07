@@ -12,11 +12,11 @@ namespace Questao5.Infrastructure.Services.Controllers
     public class ContaController : ControllerBase
     {
         [SwaggerOperation(
-        Summary = "Creates a new user",
-        Description = "This endpoint allows you to create a new user in the system. The user details should be provided in the request body."
+        Summary = "Movimenta uma conta",
+        Description = "Este endpoint proporciona a ação de movimentar a conta através de débito ou crédito. A identificação de conta do usuário precisa ser passada no body da request."
         )]
-        [SwaggerResponse(StatusCodes.Status200OK, "Successfully created the user.")]
-        [SwaggerResponse(StatusCodes.Status400BadRequest, "Invalid input provided.")]
+        [SwaggerResponse(StatusCodes.Status200OK, "Movimentou a conta com sucesso.")]
+        [SwaggerResponse(StatusCodes.Status400BadRequest, "Erro de validação dos dados do body da request.")]
         [HttpPost]
         [Route("movimentar")]
         [Idempotent(Enabled = false)]
@@ -36,6 +36,12 @@ namespace Questao5.Infrastructure.Services.Controllers
             return Ok(response.Result);
         }
 
+        [SwaggerOperation(
+        Summary = "Procura uma conta por id",
+        Description = "Este endpoint proporciona a ação de procurar por uma conta no banco através do seu id. A identificação de conta do usuário precisa ser passada na URL da requisição."
+        )]
+        [SwaggerResponse(StatusCodes.Status200OK, "Conta encontrada com sucesso.")]
+        [SwaggerResponse(StatusCodes.Status400BadRequest, "Erro na válidação do ID da conta. (Inválido, inativa)")]
         [HttpGet]
         [Route("consultar/{id}")]
         public IActionResult ConsultarConta(
@@ -48,8 +54,13 @@ namespace Questao5.Infrastructure.Services.Controllers
             {
                 return BadRequest(response.Result.erro);
             }
-
-            return Ok(response.Result.valor);
+            
+            return Ok(new { // Para náo retornar o objeto de erro dentro
+                idcontacorrente = response.Result.Idcontacorrente,
+                Saldo = response.Result.Saldo,
+                Titular = response.Result.Titular,
+                horaConsulta = response.Result.HoralConsulta,
+            });
         }
     }
 }

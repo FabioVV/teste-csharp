@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fabin\\OneDrive\\Área de Trabalho\\testepg\\Questao5\\Questao5.csproj": {}
+    "C:\\Users\\fabin\\OneDrive\\Área de Trabalho\\teste real\\Questao5\\Questao5.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fabin\\OneDrive\\Área de Trabalho\\testepg\\Questao5\\Questao5.csproj": {
+    "C:\\Users\\fabin\\OneDrive\\Área de Trabalho\\teste real\\Questao5\\Questao5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fabin\\OneDrive\\Área de Trabalho\\testepg\\Questao5\\Questao5.csproj",
+        "projectUniqueName": "C:\\Users\\fabin\\OneDrive\\Área de Trabalho\\teste real\\Questao5\\Questao5.csproj",
         "projectName": "Questao5",
-        "projectPath": "C:\\Users\\fabin\\OneDrive\\Área de Trabalho\\testepg\\Questao5\\Questao5.csproj",
+        "projectPath": "C:\\Users\\fabin\\OneDrive\\Área de Trabalho\\teste real\\Questao5\\Questao5.csproj",
         "packagesPath": "C:\\Users\\fabin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fabin\\OneDrive\\Área de Trabalho\\testepg\\Questao5\\obj\\",
+        "outputPath": "C:\\Users\\fabin\\OneDrive\\Área de Trabalho\\teste real\\Questao5\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -41,7 +41,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     // Include XML comments
     c.EnableAnnotations();
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "API Banco", Version = "v1" });
 });
 
 var app = builder.Build();
