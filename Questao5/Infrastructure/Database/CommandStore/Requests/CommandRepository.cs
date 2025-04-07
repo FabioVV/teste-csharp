@@ -3,7 +3,6 @@ using Questao5.Application.Queries.Requests;
 using Questao5.Domain.Entities;
 using Questao5.Domain.Interfaces;
 using Questao5.Infrastructure.Sqlite;
-using System;
 
 namespace Questao5.Infrastructure.Database.CommandStore.Requests
 {
@@ -23,7 +22,7 @@ namespace Questao5.Infrastructure.Database.CommandStore.Requests
 
             return result;
         }
-
+        
         public int MovimentarConta(string guid, MovimentarContaRequest command)
         {
             var result = _databaseBootstrap._connection.Execute($"INSERT INTO movimento(idmovimento, idcontacorrente, datamovimento, tipomovimento, valor) VALUES(@idmovimento, @idcontacorrente, @datamovimento, @tipomovimento, @valor);",
