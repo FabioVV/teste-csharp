@@ -11,12 +11,19 @@
           "Conta"
         ],
         "summary": "Movimenta uma conta",
-        "description": "Este endpoint proporciona a ação de movimentar a conta através de débito ou crédito. A identificação de conta do usuário precisa ser na URL da request.",
+        "description": "Este endpoint proporciona a ação de movimentar a conta através de débito ou crédito. A identificação de conta do usuário precisa ser na URL da request.Headers esperados: \nX-Idempotency-Key: Identificador único da requisição, do tipo GUID",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Idempotency-Key",
+            "in": "header",
             "schema": {
               "type": "string"
             }
@@ -36,7 +43,7 @@
             "description": "Movimentou a conta com sucesso."
           },
           "400": {
-            "description": "Erro de validação dos dados do body da request ou ID na URL."
+            "description": "Erro: INVALID_ACCOUNT(idcontacorrente) - ID de conta inexistente; \n Erro: INACTIVE_ACCOUNT(idcontacorrente) - ID de conta inativa; \n Erro: INVALID_VALUE(Valor) - Valor de movimentação precisa ser positivo; \n Erro: INVALID_TYPE(TipoMovimento) - Apenas tipos de Débito (D) ou Crédito (C) são aceitos"
           }
         }
       }
@@ -75,6 +82,14 @@
         "type": "object",
         "properties": {
           "IdContaCorrente": {
+            "type": "string",
+            "nullable": true
+          },
+          "RequestID": {
+            "type": "string",
+            "nullable": true
+          },
+          "RequestURL": {
             "type": "string",
             "nullable": true
           },

@@ -7,7 +7,9 @@ namespace Questao1
         private const double Tax = 3.50;
 
         private int Number { get; set; }
+
         public string Owner { get; set; }
+
         private double Balance  { get; set; }
 
 
@@ -25,18 +27,6 @@ namespace Questao1
         public double getBalance(){
             return Balance;
         }
-
-        // public double Deposito(double amount){
-        //     Balance += amount;
-
-        //     return Balance;
-        // }
-
-        // public double Saque(double amount){
-        //     Balance -= amount + Tax;
-
-        //     return Balance;
-        // }
 
         public override string ToString()
         {

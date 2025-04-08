@@ -1,6 +1,5 @@
 using Newtonsoft.Json;
 
-
 public class ApiResponse
 {
     [JsonProperty("page")]

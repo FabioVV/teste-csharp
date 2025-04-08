@@ -1,10 +1,6 @@
 ﻿using Questao1.Domain.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Questao1.Presentation
 {
@@ -13,6 +9,7 @@ namespace Questao1.Presentation
         private Account _account;
         private IAccountRepository _accountRepository;
         private IAccountService _accountService;
+
 
         public View(IAccountRepository accountRepository, IAccountService accountService)
         {

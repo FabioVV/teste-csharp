@@ -5,5 +5,6 @@ namespace Questao5.Domain.Interfaces
     public interface IQueryRepository
     {
         Conta ProcurarPorId(string id);
+        Idempotente ProcuraRequisicao(Guid RequestID);
     }
 }

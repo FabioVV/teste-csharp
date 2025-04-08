@@ -1,10 +1,13 @@
 using FluentAssertions;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
+using Questao5.Application.Commands.Requests;
 using Questao5.Application.Commands.Responses;
-using Questao5.Application.Queries.Requests;
 using Questao5.Domain.Enumerators;
+using Questao5.Infrastructure.Database.CommandStore.Requests;
+using Questao5.Infrastructure.Database.QueryStore.Requests;
 using Questao5.Infrastructure.Services.Controllers;
 
 namespace TestAPI
@@ -13,12 +16,28 @@ namespace TestAPI
     {
         private readonly IMediator _mediatorMock;
 
+        private readonly QueryRepository _query;
+
+        private readonly CommandRepository _command;
+
         private readonly ContaController _controller;
 
         public TesteApiBancoMovimentarConta()
         {
             _mediatorMock = Substitute.For<IMediator>();
-            _controller = new ContaController(_mediatorMock);
+            _query = Substitute.For<QueryRepository>();
+            _command = Substitute.For<CommandRepository>();
+
+            _controller = new ContaController(_mediatorMock, _query, _command);
+
+            
+            var context = new DefaultHttpContext();
+            context.Request.Headers["X-Idempotency-Key"] = "B6BAFC09-6967-ED11-A567-055DFA4A16C9";
+            _controller.ControllerContext = new ControllerContext
+            {
+                HttpContext = context
+            }; 
+            
         }
 
         [Fact]
@@ -43,7 +62,7 @@ namespace TestAPI
                 .Returns(Task.FromResult(errorResponse));
 
             // Act
-            var result = _controller.MovimentarConta(_mediatorMock, command, id);
+            var result = _controller.MovimentarConta(_mediatorMock, command, id, "6c8f2d6a-2648-4078-af1d-1727c38ea8d3");
 
             // Assert
             var badRequestResult = result as BadRequestObjectResult;
@@ -75,7 +94,7 @@ namespace TestAPI
                 .Returns(Task.FromResult(errorResponse));
 
             // Act
-            var result = _controller.MovimentarConta(_mediatorMock, command, id);
+            var result = _controller.MovimentarConta(_mediatorMock, command, id, "6c8f2d6a-2648-4078-af1d-1727c38ea8d3");
 
             // Assert
             var badRequestResult = result as BadRequestObjectResult;
@@ -107,7 +126,7 @@ namespace TestAPI
                 .Returns(Task.FromResult(errorResponse));
 
             // Act
-            var result = _controller.MovimentarConta(_mediatorMock, command, id);
+            var result = _controller.MovimentarConta(_mediatorMock, command, id, "6c8f2d6a-2648-4078-af1d-1727c38ea8d3");
 
             // Assert
             var badRequestResult = result as BadRequestObjectResult;
@@ -139,7 +158,7 @@ namespace TestAPI
                 .Returns(Task.FromResult(errorResponse));
 
             // Act
-            var result = _controller.MovimentarConta(_mediatorMock, command, id);
+            var result = _controller.MovimentarConta(_mediatorMock, command, id, "6c8f2d6a-2648-4078-af1d-1727c38ea8d3");
 
             // Assert
             var badRequestResult = result as BadRequestObjectResult;
@@ -170,7 +189,7 @@ namespace TestAPI
                 .Returns(Task.FromResult(SuccessResponse));
 
             // Act
-            var result = _controller.MovimentarConta(_mediatorMock, command, id);
+            var result = _controller.MovimentarConta(_mediatorMock, command, id, "6c8f2d6a-2648-4078-af1d-1727c38ea8d3");
 
             // Assert
             var okResult = result as OkObjectResult;

@@ -36,13 +36,18 @@
     "Parameters": [
       {
         "Name": "command",
-        "Type": "Questao5.Application.Queries.Requests.MovimentarContaRequest",
+        "Type": "Questao5.Application.Commands.Requests.MovimentarContaRequest",
         "IsRequired": true
       },
       {
         "Name": "id",
         "Type": "System.String",
         "IsRequired": true
+      },
+      {
+        "Name": "X-Idempotency-Key",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [

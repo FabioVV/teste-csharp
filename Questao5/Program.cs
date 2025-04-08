@@ -14,9 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 
-
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
-
 
 // Adiciona idempotencia através de CACHE do client
 builder.Services.AddDistributedMemoryCache();

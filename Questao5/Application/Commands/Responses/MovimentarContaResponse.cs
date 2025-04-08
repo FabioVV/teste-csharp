@@ -6,8 +6,20 @@ namespace Questao5.Application.Commands.Responses
 {
     public class MovimentarContaResponse
     {
+
         public string IdMovimento { get; set; }
+
         public Errors erro { get; set; }
+
+        public MovimentarContaResponse()
+        {
+            
+        }
+        public MovimentarContaResponse(string idMovimento)
+        {
+            IdMovimento = idMovimento;
+        }
+
 
     }
 

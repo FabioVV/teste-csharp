@@ -3,7 +3,9 @@ using Questao2.Domain.Interface;
 public class GoalService : IGoalService
 {
     private IHttpHelper _httpHelper { get; set; }
+
     private IGoalHelper _goalHelper { get; set; }
+
 
     public GoalService(IHttpHelper httpHelper, IGoalHelper goalHelper)
     {
@@ -17,7 +19,6 @@ public class GoalService : IGoalService
 
         for (int i = 1; i <= 2; i++)
         {
-
             ApiResponse resp = await _httpHelper.ApiCallAsync(team, year, i, 1);
 
             goals += _goalHelper.SumGoals(resp.Data, i);
@@ -28,7 +29,6 @@ public class GoalService : IGoalService
                 resp = await _httpHelper.ApiCallAsync(team, year, i, j);
                 goals += _goalHelper.SumGoals(resp.Data, i);
             }
-
         }
 
         return goals;

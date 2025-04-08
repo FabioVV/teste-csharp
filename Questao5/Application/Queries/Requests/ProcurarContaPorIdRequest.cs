@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Questao5.Application.Queries.Responses;
 
-namespace Questao5.Application.Commands.Requests
+namespace Questao5.Application.Queries.Requests
 {
     public class ProcurarContaPorIdRequest : IRequest<ProcurarContaPorIdResponse>
     {

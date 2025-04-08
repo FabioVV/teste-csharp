@@ -2,11 +2,14 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
-using Questao5.Application.Commands.Requests;
 using Questao5.Application.Commands.Responses;
+using Questao5.Application.Queries.Requests;
 using Questao5.Application.Queries.Responses;
 using Questao5.Domain.Enumerators;
+using Questao5.Infrastructure.Database.CommandStore.Requests;
+using Questao5.Infrastructure.Database.QueryStore.Requests;
 using Questao5.Infrastructure.Services.Controllers;
+using Questao5.Infrastructure.Sqlite;
 
 namespace TestAPI
 {
@@ -14,12 +17,22 @@ namespace TestAPI
     {
         private readonly IMediator _mediatorMock;
 
+
+        private readonly QueryRepository _query;
+
+        private readonly CommandRepository _command;
+
         private readonly ContaController _controller;
+
+
 
         public TesteApiBancoProcurarContaPorId()
         {
             _mediatorMock = Substitute.For<IMediator>();
-            _controller = new ContaController(_mediatorMock);
+            _query = Substitute.For<QueryRepository>();
+            _command = Substitute.For<CommandRepository>();
+
+            _controller = new ContaController(_mediatorMock, _query, _command);
         }
 
         [Fact]
